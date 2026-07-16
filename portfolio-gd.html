@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Selected design, web, logo, and AI prompt projects by Katy Gullo.">
+  <title>All Projects — Katy Gullo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+  <header class="projects-hero">
+    <div class="projects-hero-shape" aria-hidden="true"></div>
+
+    <div class="shell projects-hero-content">
+      <a class="back-link" href="index.html" aria-label="Return to home page">← Home</a>
+
+      <div class="projects-title-wrap">
+        <p class="eyebrow">Selected work by Katy Gullo</p>
+        <h1>ALL<br>PROJECTS</h1>
+        <p class="projects-intro">
+          A collection of undergraduate work, websites, logo systems, and
+          AI-assisted creative explorations.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-browser shell" aria-labelledby="project-heading">
+      <div class="section-heading-row">
+        <div>
+          <p class="section-kicker">Portfolio archive</p>
+          <h2 id="project-heading">EXPLORE THE WORK</h2>
+        </div>
+        <p id="projectCount" class="project-count" aria-live="polite"></p>
+      </div>
+
+      <div class="filter-tabs" role="tablist" aria-label="Filter projects by category">
+        <button class="filter-tab active" type="button" role="tab" aria-selected="true" data-filter="all">All Projects</button>
+        <button class="filter-tab" type="button" role="tab" aria-selected="false" data-filter="undergrad">Undergrad</button>
+        <button class="filter-tab" type="button" role="tab" aria-selected="false" data-filter="web-design">Web Design</button>
+        <button class="filter-tab" type="button" role="tab" aria-selected="false" data-filter="general-design">General Design</button>
+      </div>
+
+      <div class="all-project-grid" id="projectGrid">
+        <article class="portfolio-project" data-category="general-design" data-title="Advertisement Design" data-description="An undergraduate advertising project focused on hierarchy, typography, and visual impact." 
+        data-image="images/Advertisement-02.png">
+          <button class="project-preview" type="button" aria-label="Open Advertisement Design project">
+            <img src="images/Advertisement-02.png" alt="Advertisement design project">
+            <span class="open-label">View project</span>
+          </button>
+          <div class="project-meta">
+            <span class="project-number">01</span>
+            <div>
+              <p class="project-category">General Design</p>
+              <h3>Advertisement Design</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-project" data-category="general-design" data-title="Graduation Invitation" data-description="A custom invitation balancing celebratory details with a clear editorial layout." 
+        data-image="images/ES Grad invtie.png">
+          <button class="project-preview" type="button" aria-label="Open Graduation Invitation project">
+            <img src="images/ES Grad invtie.png" alt="Graduation invitation design">
+            <span class="open-label">View project</span>
+          </button>
+          <div class="project-meta">
+            <span class="project-number">02</span>
+            <div>
+              <p class="project-category">General Design</p>
+              <h3>Graduation Invitation</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-project" data-category="undergrad" data-title="Rosia Montana Brochure" data-description="A brochure and editorial layout project featuring information design and structured storytelling." 
+        data-image="images/Rosia Montana Broschure.png">
+          <button class="project-preview" type="button" aria-label="Open Rosia Montana Brochure project">
+            <img src="images/Rosia Montana Broschure.png" alt="Rosia Montana brochure design">
+            <span class="open-label">View project</span>
+          </button>
+          <div class="project-meta">
+            <span class="project-number">03</span>
+            <div>
+              <p class="project-category">Undergrad</p>
+              <h3>Rosia Montana Brochure</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-project" data-category="general-design" data-title="Advertisement Design" data-description="Advertisement Design" data-description="An undergraduate advertising project focused on hierarchy, typography, and visual impact." 
+        data-image="images/Advertisement-01.png">
+          <button class="project-preview" type="button" aria-label="Advertisement Design">
+            <img src="images/Advertisement-01.png" alt="Original fine art project">
+            <span class="open-label">View project</span>
+          </button>
+          <div class="project-meta">
+            <span class="project-number">04</span>
+            <div>
+              <p class="project-category">AI Prompt</p>
+              <h3>Advertisement Design</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-project" data-category="web-design" data-title="web-design" data-description="Campaign website created to highlight an upcoming political figure." 
+        data-image="images/Balch-portfolio.png">
+          <button class="project-preview" type="button" aria-label="Balch-portfolio">
+            <img src="images/Balch-portfolio.png" alt="Graduation invitation design">
+            <span class="open-label">View project</span>
+          </button>
+          <div class="project-meta">
+            <span class="project-number">05</span>
+            <div>
+              <p class="project-category">Web Design</p>
+              <h3>Graduation Invitation</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-project" data-category="general-design" data-title="Amy Winehouse Album Cover" data-description="This album cover redesign pays homage to Amy Winehouse’s timeless aesthetic" 
+        data-image="images/IMG_2194.jpeg">
+          <button class="project-preview" type="button" aria-label="Amy Winehouse Album Cover">
+            <img src="images/IMG_2194.jpeg" alt="Amy Whinehouse">
+            <span class="open-label">View project</span>
+          </button>
+          <div class="project-meta">
+            <span class="project-number">06</span>
+            <div>
+              <p class="project-category">General Design</p>
+              <h3>Amy Winehouse Album Cover</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-project" data-category="general-design" data-title="Advertisement Design" data-description="Atavista Album Cover" data-description="Develop an album cover that embodies the idea of atavism, a return to primal origins and emotional authenticity through sound and image." 
+        data-image="images/IMG_2195.jpeg">
+          <button class="project-preview" type="button" aria-label="Advertisement Design">
+            <img src="images/IMG_2195.jpeg" alt="Atavista Album Cover">
+            <span class="open-label">View project</span>
+          </button>
+          <div class="project-meta">
+            <span class="project-number">07</span>
+            <div>
+              <p class="project-category">General Design</p>
+              <h3>Atavista Album Cover</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-project" data-category="web-design" data-title="The Pizza Place" data-description="A custom website to allow for a small local pizza shop to show their menu and recieve orders." 
+        data-image="images/PIZZA PLACE PORTFOLIO.png">
+          <button class="project-preview" type="button" aria-label="The Pizza Place">
+            <img src="images/PIZZA PLACE PORTFOLIO.png" alt="The Pizza Place">
+            <span class="open-label">View project</span>
+          </button>
+          <div class="project-meta">
+            <span class="project-number">08</span>
+            <div>
+              <p class="project-category">Web Design</p>
+              <h3>The Pizza Place Website</h3>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-project" data-category="web-design" data-title="Tarif" data-description="A website that showases the font Tarif and provides information about the creation" 
+        data-image="images/Tarif portfolio.png">
+          <button class="project-preview" type="button" aria-label="Tarif Website">
+            <img src="images/Tarif portfolio.png" alt="Tarif Website">
+            <span class="open-label">View project</span>
+          </button>
+          <div class="project-meta">
+            <span class="project-number">09</span>
+            <div>
+              <p class="project-category">Web Design</p>
+              <h3>Tarif Website</h3>
+            </div>
+          </div>
+        </article>
+        
+                <article class="portfolio-project" data-category="web-design" data-title="Elianas Nails Studio Website" data-description="A website for a nail artist to be able to book clients and show their portfolio." 
+        data-image="images/eliana-web.png">
+          <button class="project-preview" type="button" aria-label="Elianas Nails Studio Website">
+            <img src="images/eliana-web.png" alt="Elianas Nails Studio Website">
+            <span class="open-label">View project</span>
+          </button>
+          <div class="project-meta">
+            <span class="project-number">10</span>
+            <div>
+              <p class="project-category">Web Design</p>
+              <h3>Elianas Nails Studio Website</h3>
+            </div>
+          </div>
+        </article>
+        
+                <article class="portfolio-project" data-category="general-design" data-title="Graduation invitation" data-description="A custom invitation balancing celebratory details with a clear editorial layout." 
+        data-image="images/Katys Grad Invitation.png">
+          <button class="project-preview" type="button" aria-label="Graduation invitation">
+            <img src="images/Katys Grad Invitation.png" alt="Graduation invitation">
+            <span class="open-label">View project</span>
+          </button>
+          <div class="project-meta">
+            <span class="project-number">11</span>
+            <div>
+              <p class="project-category">General design</p>
+              <h3>Graduation invitation</h3>
+            </div>
+          </div>
+        </article>
+        
+        <article class="portfolio-project" data-category="web-design" data-title="My design portfolio website" 
+        data-image="images/katygullo-web.png">
+          <button class="project-preview" type="button" aria-label="My design portfolio website">
+            <img src="images/katygullo-web.png" alt="My design portfolio website">
+            <span class="open-label">View project</span>
+          </button>
+          <div class="project-meta">
+            <span class="project-number">12</span>
+            <div>
+              <p class="project-category">web design</p>
+              <h3>My design portfolio website</h3>
+            </div>
+          </div>
+        </article>
+
+
+        
+
+      <p class="empty-state" id="emptyState" hidden>No projects are available in this category yet.</p>
+    </section>
+
+    <section class="project-contact">
+      <div class="shell project-contact-inner">
+        <div>
+          <p class="section-kicker">Have a project in mind?</p>
+          <h2>LET’S MAKE<br>SOMETHING GOOD.</h2>
+        </div>
+        <a class="contact-pill" href="mailto:katygullodesigns@gmail.com">Start a conversation →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell portfolio-page-footer">
+      <p>© 2026 Katy Gullo</p>
+      <a href="#top" id="backToTop">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="portfolio-lightbox" id="portfolioLightbox" aria-hidden="true">
+    <button class="portfolio-lightbox-close" id="portfolioLightboxClose" type="button" aria-label="Close project preview">×</button>
+    <div class="portfolio-lightbox-card" role="dialog" aria-modal="true" aria-labelledby="portfolioLightboxTitle">
+      <div class="portfolio-lightbox-visual" id="portfolioLightboxVisual"></div>
+      <p class="portfolio-lightbox-category" id="portfolioLightboxCategory"></p>
+      <h2 id="portfolioLightboxTitle"></h2>
+      <p id="portfolioLightboxDescription"></p>
+    </div>
+  </div>
+
+  <script src="portfolio.js"></script>
+</body>
+</html>
