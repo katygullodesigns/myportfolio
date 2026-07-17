@@ -654,7 +654,7 @@ footer {
 
   .hero h1 {
     padding-top: 28px;
-    font-size: clamp(4rem, 20vw, 6.2rem);
+    font-size: clamp(4rem, 15vw, 6.2rem);
   }
 
   .byline {
