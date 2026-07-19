@@ -212,3 +212,52 @@ document.addEventListener("keydown", (event) => {
 
 // Start by showing every project
 filterProjects("all");
+
+const projectModal = document.querySelector("#projectModal");
+const modalTitle = projectModal.querySelector("#projectModalTitle");
+const projectGallery = projectModal.querySelector(".project-gallery");
+const closeButton = projectModal.querySelector(".project-modal-close");
+const modalOverlay = projectModal.querySelector(".project-modal-overlay");
+
+document.querySelectorAll(".portfolio-project").forEach((project) => {
+  const previewButton = project.querySelector(".project-preview");
+
+  previewButton.addEventListener("click", () => {
+    const title = project.dataset.title;
+    const images = JSON.parse(project.dataset.images || "[]");
+
+    modalTitle.textContent = title;
+    projectGallery.innerHTML = "";
+
+    images.forEach((imageSource, index) => {
+      const image = document.createElement("img");
+
+      image.src = imageSource;
+      image.alt = `${title} project image ${index + 1}`;
+      image.loading = "lazy";
+
+      projectGallery.appendChild(image);
+    });
+
+    projectModal.classList.add("is-open");
+    projectModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+
+    closeButton.focus();
+  });
+});
+
+function closeProjectModal() {
+  projectModal.classList.remove("is-open");
+  projectModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("modal-open");
+}
+
+closeButton.addEventListener("click", closeProjectModal);
+modalOverlay.addEventListener("click", closeProjectModal);
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && projectModal.classList.contains("is-open")) {
+    closeProjectModal();
+  }
+});
