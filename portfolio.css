@@ -639,15 +639,28 @@ body.modal-open {
 
 .portfolio-lightbox-visual {
   min-height: 420px;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
+  overflow-y: auto;
   background: var(--soft);
 }
 
 .portfolio-lightbox-visual img {
   width: 100%;
   max-height: 65vh;
+  object-fit: contain;
+}
+
+.portfolio-lightbox-gallery {
+  width: 100%;
+  display: grid;
+  gap: 24px;
+  padding: 12px;
+}
+
+.portfolio-lightbox-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
   object-fit: contain;
 }
 
