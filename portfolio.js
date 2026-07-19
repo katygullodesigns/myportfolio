@@ -102,35 +102,75 @@ function openProject(project) {
 
   lastFocusedElement = document.activeElement;
 
-  const imagePath = project.dataset.image;
   const originalPreview =
     project.querySelector(".project-preview");
 
+  const sourceImage =
+    originalPreview?.querySelector("img");
+
+  const projectTitle =
+    project.dataset.title || "Portfolio Project";
+
   lightboxVisual.replaceChildren();
 
-  if (imagePath) {
-    const sourceImage =
-      originalPreview?.querySelector("img");
+  let albumImages = [];
 
-    const image = document.createElement("img");
+  // Read the album images from data-images
+  if (project.dataset.images) {
+    try {
+      albumImages = JSON.parse(project.dataset.images);
+    } catch (error) {
+      console.error(
+        `Could not read images for ${projectTitle}:`,
+        error
+      );
+    }
+  }
 
-    image.src = imagePath;
+  // Project has an album
+  if (albumImages.length > 0) {
+    const gallery = document.createElement("div");
+    gallery.className = "portfolio-lightbox-gallery";
 
-    image.alt =
-      sourceImage?.alt ||
-      project.dataset.title ||
-      "Project preview";
+    albumImages.forEach((imagePath, index) => {
+      const image = document.createElement("img");
 
-    lightboxVisual.append(image);
-  } else if (originalPreview) {
-    // Use a copy of the card artwork when no image is supplied
-    const visualClone =
-      originalPreview.cloneNode(true);
+      image.src = imagePath;
+      image.alt =
+        `${projectTitle} project image ${index + 1}`;
 
-    visualClone.removeAttribute("aria-label");
-    visualClone.tabIndex = -1;
+      // Load the first image immediately
+      image.loading = index === 0 ? "eager" : "lazy";
 
-    lightboxVisual.append(visualClone);
+      gallery.appendChild(image);
+    });
+
+    lightboxVisual.appendChild(gallery);
+  } else {
+    // Fall back to the original single-image system
+    const imagePath = project.dataset.image;
+
+    if (imagePath) {
+      const image = document.createElement("img");
+
+      image.src = imagePath;
+
+      image.alt =
+        sourceImage?.alt ||
+        projectTitle ||
+        "Project preview";
+
+      lightboxVisual.appendChild(image);
+    } else if (originalPreview) {
+      // Use a copy of generated card artwork
+      const visualClone =
+        originalPreview.cloneNode(true);
+
+      visualClone.removeAttribute("aria-label");
+      visualClone.tabIndex = -1;
+
+      lightboxVisual.appendChild(visualClone);
+    }
   }
 
   if (lightboxCategory) {
@@ -140,9 +180,7 @@ function openProject(project) {
   }
 
   if (lightboxTitle) {
-    lightboxTitle.textContent =
-      project.dataset.title ||
-      "Portfolio Project";
+    lightboxTitle.textContent = projectTitle;
   }
 
   if (lightboxDescription) {
@@ -212,52 +250,3 @@ document.addEventListener("keydown", (event) => {
 
 // Start by showing every project
 filterProjects("all");
-
-const projectModal = document.querySelector("#projectModal");
-const modalTitle = projectModal.querySelector("#projectModalTitle");
-const projectGallery = projectModal.querySelector(".project-gallery");
-const closeButton = projectModal.querySelector(".project-modal-close");
-const modalOverlay = projectModal.querySelector(".project-modal-overlay");
-
-document.querySelectorAll(".portfolio-project").forEach((project) => {
-  const previewButton = project.querySelector(".project-preview");
-
-  previewButton.addEventListener("click", () => {
-    const title = project.dataset.title;
-    const images = JSON.parse(project.dataset.images || "[]");
-
-    modalTitle.textContent = title;
-    projectGallery.innerHTML = "";
-
-    images.forEach((imageSource, index) => {
-      const image = document.createElement("img");
-
-      image.src = imageSource;
-      image.alt = `${title} project image ${index + 1}`;
-      image.loading = "lazy";
-
-      projectGallery.appendChild(image);
-    });
-
-    projectModal.classList.add("is-open");
-    projectModal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-
-    closeButton.focus();
-  });
-});
-
-function closeProjectModal() {
-  projectModal.classList.remove("is-open");
-  projectModal.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("modal-open");
-}
-
-closeButton.addEventListener("click", closeProjectModal);
-modalOverlay.addEventListener("click", closeProjectModal);
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && projectModal.classList.contains("is-open")) {
-    closeProjectModal();
-  }
-});
